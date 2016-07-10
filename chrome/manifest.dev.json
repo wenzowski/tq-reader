@@ -1,0 +1,28 @@
+{
+  "version": "0.0.0",
+  "name": "tq-reader",
+  "manifest_version": 2,
+  "description": "TopicQuests bookmarking & reading extension",
+  "browser_action": {
+    "default_title": "Save to TopicQuests",
+    "default_popup": "bookmark.html"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+K",
+        "mac": "Command+Shift+K"
+      }
+    }
+  },
+  "icons": {
+    "16": "img/icon-16.png",
+    "48": "img/icon-48.png",
+    "128": "img/icon-128.png"
+  },
+  "background": {
+    "page": "background.html"
+  },
+  "permissions": [ "contextMenus", "management", "activeTab", "tabs", "pageCapture", "storage", "https://dialogue-map.wenzowski.com/*" ],
+  "content_security_policy": "default-src 'self'; script-src 'self' http://localhost:3000 https://localhost:3000 'unsafe-eval'; connect-src http://localhost:3000 https://localhost:3000; style-src * 'unsafe-inline' 'self' blob:; img-src * 'self' data:; child-src *;"
+}
